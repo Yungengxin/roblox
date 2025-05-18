@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Rb脚本中心"; Text ="注入成功！正在加载脚本..."; Duration = 4; })
 
 local msg = Instance.new("Message",workspace)
-msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“通用”中添加了用户名检测\n2.在“通用”中添加了注入器检测\n3.在“通用”中添加了注入器UNC检测\n4.在“死铁轨”中添加了RINGTA自动刷债券\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.44\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
+msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“通用”中添加了用户名检测\n2.在“通用”中添加了注入器检测\n3.在“通用”中添加了注入器UNC检测\n4.在“死铁轨”中添加了RINGTA自动刷债券\n5.在“死铁轨”中添加了近战杀戮光环\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.44\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
 wait(6)
 msg:Destroy()
 
@@ -11913,6 +11913,15 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
    loadstring(game:HttpGet("https://raw.githubusercontent.com/iopjklbnmsss/SansHubScript/refs/heads/main/SansHub"))()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "近战杀戮光环（最新绕过）---死铁轨",
+   Callback = function()
+   
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/HeadHarse/Dusty/refs/heads/main/OPAUTOSWINGV2"))()
 
    end,
 })
