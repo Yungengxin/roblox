@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Rb脚本中心"; Text ="注入成功！正在加载脚本..."; Duration = 4; })
 
 local msg = Instance.new("Message",workspace)
-msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“通用”中添加了用户名检测\n2.在“通用”中添加了注入器检测\n3.在“通用”中添加了注入器UNC检测\n4.在“死铁轨”中添加了RINGTA自动刷债券\n5.在“死铁轨”中添加了近战杀戮光环\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.44\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
+msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“死铁轨”中添加了NullFire\n2.在“死铁轨”中添加了SpineWare\n3.在“死铁轨”中修改了RINGTA自动刷债券\n4.在“死铁轨”中修改了MOON-自动刷债券\n5.添加了“传奇战场”\n6.添加了“丹迪的世界”\n7.添加了“种植花园”\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.44\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
 wait(6)
 msg:Destroy()
 
@@ -51,7 +51,7 @@ Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
 
 local Window = Rayfield:CreateWindow({
-   Name = "Rb脚本中心 v_1.2.44",
+   Name = "Rb脚本中心 v_1.2.49",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Rb脚本中心 云端更新版",
    LoadingSubtitle = "Yungengxin-制作",
@@ -11854,6 +11854,26 @@ end)
    end,
 })
 
+local PlayerTab = Window:CreateTab("种植花园", 4483362458) -- Title, Image
+
+local Button = PlayerTab:CreateButton({
+   Name = "NoLog---种植花园",
+   Callback = function()
+   
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Loader/LoaderV1.lua"))()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "BullHub---种植花园",
+   Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tesghg/Grow-a-Garden/main/ameicaa_Grow_A_Garden.lua"))()
+
+   end,
+})
+
 local PlayerTab = Window:CreateTab("生存七天", 4483362458) -- Title, Image
 
 local Button = PlayerTab:CreateButton({
@@ -11918,6 +11938,24 @@ local Button = PlayerTab:CreateButton({
 })
 
 local Button = PlayerTab:CreateButton({
+   Name = "NullFire---死铁轨",
+   Callback = function()
+   
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/InfernusScripts/Null-Fire/main/Loader"))()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "SpineWare---死铁轨",
+   Callback = function()
+   
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/SpineWare/UniversalLoader/refs/heads/main/Load"))()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
    Name = "近战杀戮光环（最新绕过）---死铁轨",
    Callback = function()
    
@@ -11927,7 +11965,7 @@ local Button = PlayerTab:CreateButton({
 })
 
 local Button = PlayerTab:CreateButton({
-   Name = "RINGTA自动刷债券---死铁轨",
+   Name = "RINGTA自动刷债券（貌似失效）---死铁轨",
    Callback = function()
    
    loadstring(game:HttpGet("https://raw.githubusercontent.com/hbjrev/RINGTA.github.io/refs/heads/main/AUTOBOND.lua"))()
@@ -11936,7 +11974,7 @@ local Button = PlayerTab:CreateButton({
 })
 
 local Button = PlayerTab:CreateButton({
-   Name = "MOON-全自动刷债券---死铁轨",
+   Name = "MOON-全自动刷债券（保持可用）---死铁轨",
    Callback = function()
    
 --[[
@@ -12001,6 +12039,16 @@ Roblox= "免费"
 LNTeam= "死铁轨"
 loadstring(game:HttpGet("https://github.com/XiaoyeQWQ/state/raw/refs/heads/main/Dead-RailV2.lua"))()
 
+   end,
+})
+
+local PlayerTab = Window:CreateTab("传奇战场-Legends Battlegrounds", 4483362458) -- Title, Image
+
+local Button = PlayerTab:CreateButton({
+   Name = "BlackKing Hub---传奇战场",
+   Callback = function()
+   
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkDoorsKing/Clinet/main/LegendsBattlegrounds'))()
    end,
 })
 
@@ -24322,6 +24370,17 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
    loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua", true))()
+
+   end,
+})
+
+local PlayerTab = Window:CreateTab("丹迪的世界", 4483362458) -- Title, Image
+
+local Button = PlayerTab:CreateButton({
+   Name = "Aussie WIRE---Dandy's World",
+   Callback = function()
+   
+   loadstring(game:HttpGet(request({Url='https://aussie.productions/script'}).Body))()
 
    end,
 })
