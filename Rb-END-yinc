@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Rb脚本中心"; Text ="注入成功！正在加载脚本..."; Duration = 4; })
 
 local msg = Instance.new("Message",workspace)
-msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“死铁轨”中添加了NullFire\n2.在“死铁轨”中添加了SpineWare\n3.在“死铁轨”中修改了RINGTA自动刷债券\n4.在“死铁轨”中修改了MOON-自动刷债券\n5.添加了“传奇战场”\n6.添加了“丹迪的世界”\n7.添加了“种植花园”\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.49\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
+msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“被遗弃”中添加了BobJunior1\n2.在“种植花园”中添加了Native\n3.在“最强战场”中添加了捡垃圾桶，瞬移，隐身脚本\n4.添加了“动漫传奇”\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.51\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
 wait(6)
 msg:Destroy()
 
@@ -51,7 +51,7 @@ Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
 
 local Window = Rayfield:CreateWindow({
-   Name = "Rb脚本中心 v_1.2.49",
+   Name = "Rb脚本中心 v_1.2.51",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Rb脚本中心 云端更新版",
    LoadingSubtitle = "Yungengxin-制作",
@@ -11857,6 +11857,17 @@ end)
 local PlayerTab = Window:CreateTab("种植花园", 4483362458) -- Title, Image
 
 local Button = PlayerTab:CreateButton({
+   Name = "Native---种植花园",
+   Callback = function()
+   
+script_key="";
+(loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
+
+   end,
+})
+
+
+local Button = PlayerTab:CreateButton({
    Name = "NoLog---种植花园",
    Callback = function()
    
@@ -11886,6 +11897,16 @@ local Button = PlayerTab:CreateButton({
 })
 
 local PlayerTab = Window:CreateTab("被遗弃", 4483362458) -- Title, Image
+
+local Button = PlayerTab:CreateButton({
+   Name = "BobJunior1---被遗弃",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BobJunior1/ForsakenBoi/refs/heads/main/B0bbyHub"))()
+
+   end,
+})
+
 
 local Button = PlayerTab:CreateButton({
    Name = "FS---被遗弃",
@@ -24271,6 +24292,16 @@ coroutine.wrap(NBSITW_fake_script)()
 local PlayerTab = Window:CreateTab("最强战场", 4483362458) -- Title, Image
 
 local Button = PlayerTab:CreateButton({
+   Name = "捡垃圾桶，瞬移，隐身脚本---最强战场",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/yes1nt/yes/refs/heads/main/Trashcan%20Man",true))()
+
+   end,
+})
+
+
+local Button = PlayerTab:CreateButton({
    Name = "Speed Hub X---最强战场",
    Callback = function()
    
@@ -24381,6 +24412,17 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
    loadstring(game:HttpGet(request({Url='https://aussie.productions/script'}).Body))()
+
+   end,
+})
+
+local PlayerTab = Window:CreateTab("动漫传奇", 4483362458) -- Title, Image
+
+local Button = PlayerTab:CreateButton({
+   Name = "NS Hub---动漫传奇",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Winnable-Hub/Loader/refs/heads/main/Loader.Lua"))()
 
    end,
 })
