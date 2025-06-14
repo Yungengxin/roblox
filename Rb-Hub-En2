@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Rb-ScriptHub"; Text ="Injection successful! The script is being loaded..."; Duration = 4; })
 
 local msg = Instance.new("Message",workspace)
-msg.Text = "Rb-ScriptHub \nAuthor: Yungengxin\n------ Updated ------\n1. Bobjunior12 was added in “Abandoned”. \n2. Native 3 was added in “Planting Garden”. \n3. In “The Strongest Battlefield”, scripts for picking up trash cans\nteleportation, and invisibility have been added. \n4. “Anime Legend” has been added. \nCloud Update Mode: Just download this script,\nand there is no need to download new files for subsequent updates of the script. \nReal-time synchronization of the latest updates: Current version -1.2.51 \n--!! This script is a free one. It is strictly prohibited to use this script to make money!! ---"
+msg.Text = "Rb-ScriptHub \nAuthor: Yungengxin\n------ Updated ------\n1.Scripts requiring a high UNC injector have been added in "General"\n2.The FE Genesis script has been added in "General"\n3.BobJunior1 was updated in "Forsaken"\n4.The key prompt has been updated in "Forsaken"\nCloud Update Mode: Just download this script,\nand there is no need to download new files for subsequent updates of the script. \nReal-time synchronization of the latest updates: Current version -1.2.51 \n--!! This script is a free one. It is strictly prohibited to use this script to make money!! ---"
 wait(6)
 msg:Destroy()
 
@@ -6723,6 +6723,431 @@ tool.Parent = game.Players.LocalPlayer.Backpack
    end,
 })
 
+local Label = PlayerTab:CreateLabel("High UNC injector script is required ↓")
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Voodoo Doll",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--===================================--
+--=         Script Options          =--
+--===================================--
+DisableRedAnimatedText = false --disables the animated text that keeps popping up on screen, does not disable Kills, Target or Script Title
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Puppet%20Master"))()
+--==========================================================================================================================--
+
+
+end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---AK47",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = false --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/AK-47"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---The Vanished",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Goner"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Flash Cannon",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Lightning%20Cannon"))()
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Pistol V2 （Dear Sister）",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Dearsister"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Neko",
+   Callback = function()
+   
+DisableFlingHealthBar = false
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Neko"))()
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Fierce Wind Fighter",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Gale%20Fighter"))()
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Cristal Dance",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Krystal%20Dance"))()
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Ban Hammer",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Ban%20Hammer"))()
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Sniper",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Sniper"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Good Police, Bad Police",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Good%20Cop%20Bad%20Cop"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Mini Gun",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Minigun"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---Studio Dummy",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Studio%20Dummy"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "FE Genesis---The Sorrowful Genocide",
+   Callback = function()
+   
+--[[
+_________                       _____            ___________________
+__  ____/__________________________(_)_______    ___  ____/__  ____/
+_  / __ _  _ \_  __ \  _ \_  ___/_  /__  ___/    __  /_   __  __/   
+/ /_/ / /  __/  / / /  __/(__  )_  / _(__  )     _  __/   _  /___   
+\____/  \___//_/ /_/\___//____/ /_/  /____/      /_/      /_____/   							
+by rqz					
+https://discord.com/invite/aEZpBEHgMT
+]]--
+--====================================--
+--           FDless Options           --
+--====================================--
+allowshiftlock = true --adds shiftlock to patchma rig
+ctrltp = true --adds control click tp
+placeholders = true --adds transparent parts showing your hats when you don't have real ones
+clickfling = false --adds click flinging regardless of attacks
+highlightflingtargets = true --highlight fling
+discharscripts = true --disable character scripts
+flingchangestate = true --fling with whole body
+hidedeatheffect = true --hides the red damage border when you die (respawn)
+respawntp = 3 --respawn tp mode
+-- 0 - stay at spawn
+-- 1 - randomtp close
+-- 2 - behind fake character
+-- 3 - hide body
+breakjointsmethod = 1 --breakjoints mode
+-- 1 - health+breakjoints (the most support)
+-- 2 - health or breakjoints
+-- 3 - breakjoints
+simrad = true --sets simulation radius
+--==========================================================================================================================--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Sadist%20Genocider"))()
+--==========================================================================================================================--
+
+
+   end,
+})
+
 local PlayerTab = Window:CreateTab("Universal for FPS games", 4483362458) -- Title, Image
 
 local Button = PlayerTab:CreateButton({
@@ -11542,6 +11967,8 @@ local Button = PlayerTab:CreateButton({
 
 local PlayerTab = Window:CreateTab("Forsaken", 4483362458) -- Title, Image
 
+local Label = PlayerTab:CreateLabel("This script is key:BOBBYHUBKEYWJJEBEKEI1827272")
+
 local Button = PlayerTab:CreateButton({
    Name = "BobJunior1---Forsaken",
    Callback = function()
@@ -11550,6 +11977,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/BobJunior1/ForsakenBo
 
    end,
 })
+
+local Label = PlayerTab:CreateLabel("This script is key:web")
 
 
 local Button = PlayerTab:CreateButton({
