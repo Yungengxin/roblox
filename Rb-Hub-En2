@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Rb-ScriptHub"; Text ="Injection successful! The script is being loaded..."; Duration = 4; })
 
 local msg = Instance.new("Message",workspace)
-msg.Text = "Rb-ScriptHub \nAuthor: Yungengxin\n------ Updated ------\n1.Scripts requiring a high UNC injector have been added in "General"\n2.The FE Genesis script has been added in "General"\n3.BobJunior1 was updated in "Forsaken"\n4.The key prompt has been updated in "Forsaken"\nCloud Update Mode: Just download this script,\nand there is no need to download new files for subsequent updates of the script. \nReal-time synchronization of the latest updates: Current version -1.2.51 \n--!! This script is a free one. It is strictly prohibited to use this script to make money!! ---"
+msg.Text = "Rb-ScriptHub \nAuthor: Yungengxin\n------ Updated ------\n1.Scripts requiring a high UNC injector have been added in “Player”\n2.The FE Genesis script has been added in “Player”\n3.BobJunior1 was updated in “Forsaken”\n4.The key prompt has been updated in “Forsaken”\nCloud Update Mode: Just download this script,\nand there is no need to download new files for subsequent updates of the script. \nReal-time synchronization of the latest updates: Current version -1.2.51 \n--!! This script is a free one. It is strictly prohibited to use this script to make money!! ---"
 wait(6)
 msg:Destroy()
 
