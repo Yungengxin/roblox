@@ -6869,7 +6869,7 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Lightning%20Cannon"))()
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
