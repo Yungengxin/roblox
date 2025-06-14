@@ -6777,7 +6777,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-
+end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6819,7 +6819,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6861,7 +6861,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6911,7 +6911,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6920,7 +6920,7 @@ local Button = PlayerTab:CreateButton({
    
 DisableFlingHealthBar = false
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Neko"))()
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6928,7 +6928,7 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Gale%20Fighter"))()
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6936,7 +6936,7 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Krystal%20Dance"))()
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6944,7 +6944,7 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/main/Obfuscations/Ban%20Hammer"))()
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -6986,7 +6986,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -7028,7 +7028,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -7070,7 +7070,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -7112,7 +7112,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 local Button = PlayerTab:CreateButton({
@@ -7154,7 +7154,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/mai
 --==========================================================================================================================--
 
 
-   
+   end,
 })
 
 
