@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Rb脚本中心"; Text ="注入成功！正在加载脚本..."; Duration = 4; })
 
 local msg = Instance.new("Message",workspace)
-msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“通用”中添加了需高UNC注入器的脚本\n2.在“通用”中添加了FE创世纪脚本\n3.在“被遗弃”中更新了BobJunior1\n4.在“被遗弃”中更新了卡密提示\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.61\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
+msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“通用”中添加了音乐播放\n2.在“通用”中添加了音乐播放器\n3.添加了“一路向西”\n4.在“通用”中添加了增加画质\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.66\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
 wait(6)
 msg:Destroy()
 
@@ -51,7 +51,7 @@ Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
 
 local Window = Rayfield:CreateWindow({
-   Name = "Rb脚本中心 v_1.2.61",
+   Name = "Rb脚本中心 v_1.2.66",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Rb脚本中心 云端更新版",
    LoadingSubtitle = "Yungengxin-制作",
@@ -6731,6 +6731,266 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 
    end,
 })
+
+local Button = PlayerTab:CreateButton({
+   Name = "增加画质",
+   Callback = function()
+   
+local a = game.Lighting
+a.Ambient = Color3.fromRGB(33, 33, 33)
+a.Brightness = 5.69
+a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
+a.EnvironmentDiffuseScale = 0.105
+a.EnvironmentSpecularScale = 0.522
+a.GlobalShadows = true
+a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
+a.ShadowSoftness = 0.18
+a.GeographicLatitude = -15.525
+a.ExposureCompensation = 0.75
+b.Enabled = true
+b.Intensity = 0.99
+b.Size = 9999 
+b.Threshold = 0
+local c = Instance.new("ColorCorrectionEffect", a)
+c.Brightness = 0.015
+c.Contrast = 0.25
+c.Enabled = true
+c.Saturation = 0.2
+c.TintColor = Color3.fromRGB(217, 145, 57)
+if getgenv().mode == "Summer" then
+   c.TintColor = Color3.fromRGB(255, 220, 148)
+elseif getgenv().mode == "Autumn" then
+   c.TintColor = Color3.fromRGB(217, 145, 57)
+else
+   warn("No mode selected!")
+   print("Please select a mode")
+   b:Destroy()
+   c:Destroy()
+end
+local d = Instance.new("DepthOfFieldEffect", a)
+d.Enabled = true
+d.FarIntensity = 0.077
+d.FocusDistance = 21.54
+d.InFocusRadius = 20.77
+d.NearIntensity = 0.277
+local e = Instance.new("ColorCorrectionEffect", a)
+e.Brightness = 0
+e.Contrast = -0.07
+e.Saturation = 0
+e.Enabled = true
+e.TintColor = Color3.fromRGB(255, 247, 239)
+local e2 = Instance.new("ColorCorrectionEffect", a)
+e2.Brightness = 0.2
+e2.Contrast = 0.45
+e2.Saturation = -0.1
+e2.Enabled = true
+e2.TintColor = Color3.fromRGB(255, 255, 255)
+local s = Instance.new("SunRaysEffect", a)
+s.Enabled = true
+s.Intensity = 0.01
+s.Spread = 0.146
+
+print("RTX Graphics loaded! Created by BrickoIcko")
+
+
+   end,
+})
+
+
+local Label = PlayerTab:CreateLabel("音乐列表")
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐播放器---音响",
+   Callback = function()
+   
+-- 优化后的音乐播放功能
+local function playMusic(soundId)
+    -- 清理之前可能存在的音乐
+    for _, sound in pairs(workspace:GetChildren()) do
+        if sound:IsA("Sound") and sound.Name == "BackgroundMusic" then
+            sound:Destroy()
+        end
+    end
+    
+    -- 创建新的音乐实例
+    local sound = Instance.new("Sound")
+    sound.Name = "BackgroundMusic"
+    sound.SoundId = "rbxassetid://"..soundId
+    sound.Volume = 2 -- 增大音量
+    sound.Looped = true
+    
+    -- 使用SoundService作为父级，提高兼容性
+    sound.Parent = SoundService
+    
+    -- 设置音乐属性
+    sound.Playing = true
+    
+    -- 添加错误处理和状态检查
+    spawn(function()
+        wait(1)
+        if not sound.IsLoaded then
+            sound.Loaded:Wait()
+        end
+        
+        if sound.IsLoaded then
+            sound:Play()
+            print("音乐已加载并开始播放: "..soundId)
+        else
+            print("音乐加载失败: "..soundId)
+            MusicTitle.Text = "加载失败: "..soundId
+        end
+    end)
+    
+    return sound
+end
+
+-- 添加音乐搜索UI
+local MusicUI = Instance.new("ScreenGui")
+MusicUI.Name = "MusicSearchUI"
+MusicUI.Parent = game:GetService("CoreGui")
+
+local MusicFrame = Instance.new("Frame")
+MusicFrame.Size = UDim2.new(0, 250, 0, 120)
+MusicFrame.Position = UDim2.new(0.8, -125, 0.1, 0) -- 放在右上角
+MusicFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+MusicFrame.BorderSizePixel = 2
+MusicFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
+MusicFrame.Active = true
+MusicFrame.Draggable = true
+MusicFrame.Parent = MusicUI
+
+local MusicTitle = Instance.new("TextLabel")
+MusicTitle.Text = "音乐播放器"
+MusicTitle.Size = UDim2.new(1, 0, 0, 25)
+MusicTitle.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+MusicTitle.TextColor3 = Color3.new(1, 1, 1)
+MusicTitle.Parent = MusicFrame
+
+local SearchBox = Instance.new("TextBox")
+SearchBox.PlaceholderText = "输入音乐ID"
+SearchBox.Size = UDim2.new(0.9, 0, 0, 25)
+SearchBox.Position = UDim2.new(0.05, 0, 0.35, 0)
+SearchBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+SearchBox.TextColor3 = Color3.new(1, 1, 1)
+SearchBox.Parent = MusicFrame
+
+local PlayButton = Instance.new("TextButton")
+PlayButton.Text = "播放音乐"
+PlayButton.Size = UDim2.new(0.9, 0, 0, 25)
+PlayButton.Position = UDim2.new(0.05, 0, 0.65, 0)
+PlayButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+PlayButton.TextColor3 = Color3.new(1, 1, 1)
+PlayButton.Parent = MusicFrame
+
+-- 添加内置音乐选择器
+local InternalMusicFrame = Instance.new("Frame")
+InternalMusicFrame.Size = UDim2.new(0, 250, 0, 150)
+InternalMusicFrame.Position = UDim2.new(0, 0, 1, 5)
+InternalMusicFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+InternalMusicFrame.BorderSizePixel = 2
+InternalMusicFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
+InternalMusicFrame.Visible = false
+InternalMusicFrame.Parent = MusicFrame
+
+-- 内置音乐列表
+local musicList = {
+    {name = "热门音乐1", id = "1385488889"},
+    {name = "热门音乐2", id = "142906785"},
+    {name = "热门音乐3", id = "5410085637"},
+    {name = "热门音乐4", id = "1492819495"},
+    {name = "彩虹猫", id = "9067256917"},
+    {name = "鱿鱼游戏", id = "7535587224"},
+    {name = "see you again", id = "6251939571"},
+    {name = "武器A", id = "1838666946"},
+    {name = "起风了", id = "7548510678"},
+    {name = "海阔天空", id = "3875049052"},
+    {name = "光辉岁月", id = "6116888743"},
+    {name = "音效库显示免费", id = "4702564143"},
+    {name = "你被骗了", id = "8484505509"},
+    {name = "114514", id = "11344876508"},
+    {name = "JOJO", id = "8608569869"},
+    {name = "chipi猫", id = "16190783444"},
+}
+
+-- 创建内置音乐按钮
+for i, music in ipairs(musicList) do
+    local button = Instance.new("TextButton")
+    button.Text = music.name
+    button.Size = UDim2.new(0.9, 0, 0, 25)
+    button.Position = UDim2.new(0.05, 0, 0, 5 + (i-1) * 30)
+    button.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.Parent = InternalMusicFrame
+    
+    button.MouseButton1Click:Connect(function()
+        playMusic(music.id)
+        MusicTitle.Text = "正在播放: "..music.name
+        InternalMusicFrame.Visible = false
+    end)
+end
+
+-- 添加内置音乐按钮
+local InternalMusicButton = Instance.new("TextButton")
+InternalMusicButton.Text = "内置音乐"
+InternalMusicButton.Size = UDim2.new(0.4, 0, 0, 20)
+InternalMusicButton.Position = UDim2.new(0.55, 0, 0, 0)
+InternalMusicButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+InternalMusicButton.TextColor3 = Color3.new(1, 1, 1)
+InternalMusicButton.Parent = MusicTitle
+
+InternalMusicButton.MouseButton1Click:Connect(function()
+    InternalMusicFrame.Visible = not InternalMusicFrame.Visible
+end)
+
+-- 连接播放按钮事件
+PlayButton.MouseButton1Click:Connect(function()
+    local input = SearchBox.Text
+    if input and input ~= "" then
+        local soundId = string.match(input, "%d+")
+        if soundId then
+            local sound = playMusic(soundId)
+            MusicTitle.Text = "正在播放: "..soundId
+            InternalMusicFrame.Visible = false
+            
+            -- 添加音乐播放状态检查
+            spawn(function()
+                wait(3)
+                if sound and sound.Parent and not sound.IsPlaying then
+                    print("音乐播放失败，尝试重新加载: "..soundId)
+                    sound:Play() -- 再次尝试播放
+                    print("重新尝试播放音乐")
+                end
+            end)
+        else
+            MusicTitle.Text = "请输入有效ID"
+        end
+    else
+        MusicTitle.Text = "请输入音乐ID"
+    end
+end)
+
+-- 在游戏启动时自动播放音乐
+spawn(function()
+    wait(3) -- 增加等待时间确保游戏完全加载
+    local musicId = musicList[1].id
+    local sound = playMusic(musicId)
+    MusicTitle.Text = "正在播放: "..musicList[1].name
+    
+    -- 确保音乐真正播放
+    if sound then
+        sound.Ended:Connect(function()
+            if sound.Looped then
+                sound:Play()
+            end
+        end)
+    end
+end)
+
+
+   end,
+})
+
 
 local Label = PlayerTab:CreateLabel("需高UNC注入器脚本↓")
 
@@ -24842,6 +25102,17 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Winnable-Hub/Loader/refs/heads/main/Loader.Lua"))()
+
+   end,
+})
+
+local PlayerTab = Window:CreateTab("一路向西", 4483362458) -- Title, Image
+
+local Button = PlayerTab:CreateButton({
+   Name = "全自动刷钱---一路向西",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://pastebin.com/raw/WiL3fChb"))()
 
    end,
 })
