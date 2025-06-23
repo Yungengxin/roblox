@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = "Rb脚本中心"; Text ="注入成功！正在加载脚本..."; Duration = 4; })
 
 local msg = Instance.new("Message",workspace)
-msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“通用”中添加了音乐播放\n2.在“通用”中添加了音乐播放器\n3.添加了“一路向西”\n4.在“通用”中添加了增加画质\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.66\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
+msg.Text = "Rb脚本中心\n作者：Yungengxin\n------更新------\n1.在“通用”中添加了音乐播放\n2.在“通用”中添加了音乐\n3.添加了“一路向西”\n4.在“通用”中添加了增加画质\n5.在“死铁轨”中添加了QIWIK HUB最新自动刷债券\n云端更新模式：只需下载此脚本，脚本以后的更新都无需再下载新文件\n实时同步最新更新：现版本-1.2.66\n---！！本脚本为免费脚本，禁止使用本脚本圈钱！！---"
 wait(6)
 msg:Destroy()
 
@@ -6801,196 +6801,246 @@ print("RTX Graphics loaded! Created by BrickoIcko")
 local Label = PlayerTab:CreateLabel("音乐列表")
 
 local Button = PlayerTab:CreateButton({
-   Name = "音乐播放器---音响",
+   Name = "音乐：chipi猫",
    Callback = function()
    
--- 优化后的音乐播放功能
-local function playMusic(soundId)
-    -- 清理之前可能存在的音乐
-    for _, sound in pairs(workspace:GetChildren()) do
-        if sound:IsA("Sound") and sound.Name == "BackgroundMusic" then
-            sound:Destroy()
-        end
-    end
-    
-    -- 创建新的音乐实例
-    local sound = Instance.new("Sound")
-    sound.Name = "BackgroundMusic"
-    sound.SoundId = "rbxassetid://"..soundId
-    sound.Volume = 2 -- 增大音量
-    sound.Looped = true
-    
-    -- 使用SoundService作为父级，提高兼容性
-    sound.Parent = SoundService
-    
-    -- 设置音乐属性
-    sound.Playing = true
-    
-    -- 添加错误处理和状态检查
-    spawn(function()
-        wait(1)
-        if not sound.IsLoaded then
-            sound.Loaded:Wait()
-        end
-        
-        if sound.IsLoaded then
-            sound:Play()
-            print("音乐已加载并开始播放: "..soundId)
-        else
-            print("音乐加载失败: "..soundId)
-            MusicTitle.Text = "加载失败: "..soundId
-        end
-    end)
-    
-    return sound
-end
-
--- 添加音乐搜索UI
-local MusicUI = Instance.new("ScreenGui")
-MusicUI.Name = "MusicSearchUI"
-MusicUI.Parent = game:GetService("CoreGui")
-
-local MusicFrame = Instance.new("Frame")
-MusicFrame.Size = UDim2.new(0, 250, 0, 120)
-MusicFrame.Position = UDim2.new(0.8, -125, 0.1, 0) -- 放在右上角
-MusicFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-MusicFrame.BorderSizePixel = 2
-MusicFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
-MusicFrame.Active = true
-MusicFrame.Draggable = true
-MusicFrame.Parent = MusicUI
-
-local MusicTitle = Instance.new("TextLabel")
-MusicTitle.Text = "音乐播放器"
-MusicTitle.Size = UDim2.new(1, 0, 0, 25)
-MusicTitle.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-MusicTitle.TextColor3 = Color3.new(1, 1, 1)
-MusicTitle.Parent = MusicFrame
-
-local SearchBox = Instance.new("TextBox")
-SearchBox.PlaceholderText = "输入音乐ID"
-SearchBox.Size = UDim2.new(0.9, 0, 0, 25)
-SearchBox.Position = UDim2.new(0.05, 0, 0.35, 0)
-SearchBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-SearchBox.TextColor3 = Color3.new(1, 1, 1)
-SearchBox.Parent = MusicFrame
-
-local PlayButton = Instance.new("TextButton")
-PlayButton.Text = "播放音乐"
-PlayButton.Size = UDim2.new(0.9, 0, 0, 25)
-PlayButton.Position = UDim2.new(0.05, 0, 0.65, 0)
-PlayButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-PlayButton.TextColor3 = Color3.new(1, 1, 1)
-PlayButton.Parent = MusicFrame
-
--- 添加内置音乐选择器
-local InternalMusicFrame = Instance.new("Frame")
-InternalMusicFrame.Size = UDim2.new(0, 250, 0, 150)
-InternalMusicFrame.Position = UDim2.new(0, 0, 1, 5)
-InternalMusicFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-InternalMusicFrame.BorderSizePixel = 2
-InternalMusicFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
-InternalMusicFrame.Visible = false
-InternalMusicFrame.Parent = MusicFrame
-
--- 内置音乐列表
-local musicList = {
-    {name = "热门音乐1", id = "1385488889"},
-    {name = "热门音乐2", id = "142906785"},
-    {name = "热门音乐3", id = "5410085637"},
-    {name = "热门音乐4", id = "1492819495"},
-    {name = "彩虹猫", id = "9067256917"},
-    {name = "鱿鱼游戏", id = "7535587224"},
-    {name = "see you again", id = "6251939571"},
-    {name = "武器A", id = "1838666946"},
-    {name = "起风了", id = "7548510678"},
-    {name = "海阔天空", id = "3875049052"},
-    {name = "光辉岁月", id = "6116888743"},
-    {name = "音效库显示免费", id = "4702564143"},
-    {name = "你被骗了", id = "8484505509"},
-    {name = "114514", id = "11344876508"},
-    {name = "JOJO", id = "8608569869"},
-    {name = "chipi猫", id = "16190783444"},
-}
-
--- 创建内置音乐按钮
-for i, music in ipairs(musicList) do
-    local button = Instance.new("TextButton")
-    button.Text = music.name
-    button.Size = UDim2.new(0.9, 0, 0, 25)
-    button.Position = UDim2.new(0.05, 0, 0, 5 + (i-1) * 30)
-    button.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-    button.TextColor3 = Color3.new(1, 1, 1)
-    button.Parent = InternalMusicFrame
-    
-    button.MouseButton1Click:Connect(function()
-        playMusic(music.id)
-        MusicTitle.Text = "正在播放: "..music.name
-        InternalMusicFrame.Visible = false
-    end)
-end
-
--- 添加内置音乐按钮
-local InternalMusicButton = Instance.new("TextButton")
-InternalMusicButton.Text = "内置音乐"
-InternalMusicButton.Size = UDim2.new(0.4, 0, 0, 20)
-InternalMusicButton.Position = UDim2.new(0.55, 0, 0, 0)
-InternalMusicButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
-InternalMusicButton.TextColor3 = Color3.new(1, 1, 1)
-InternalMusicButton.Parent = MusicTitle
-
-InternalMusicButton.MouseButton1Click:Connect(function()
-    InternalMusicFrame.Visible = not InternalMusicFrame.Visible
-end)
-
--- 连接播放按钮事件
-PlayButton.MouseButton1Click:Connect(function()
-    local input = SearchBox.Text
-    if input and input ~= "" then
-        local soundId = string.match(input, "%d+")
-        if soundId then
-            local sound = playMusic(soundId)
-            MusicTitle.Text = "正在播放: "..soundId
-            InternalMusicFrame.Visible = false
-            
-            -- 添加音乐播放状态检查
-            spawn(function()
-                wait(3)
-                if sound and sound.Parent and not sound.IsPlaying then
-                    print("音乐播放失败，尝试重新加载: "..soundId)
-                    sound:Play() -- 再次尝试播放
-                    print("重新尝试播放音乐")
-                end
-            end)
-        else
-            MusicTitle.Text = "请输入有效ID"
-        end
-    else
-        MusicTitle.Text = "请输入音乐ID"
-    end
-end)
-
--- 在游戏启动时自动播放音乐
-spawn(function()
-    wait(3) -- 增加等待时间确保游戏完全加载
-    local musicId = musicList[1].id
-    local sound = playMusic(musicId)
-    MusicTitle.Text = "正在播放: "..musicList[1].name
-    
-    -- 确保音乐真正播放
-    if sound then
-        sound.Ended:Connect(function()
-            if sound.Looped then
-                sound:Play()
-            end
-        end)
-    end
-end)
-
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://16190783444"
+            Sound:Play()
 
    end,
 })
 
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：你被骗了",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://8484505509"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：JOJO",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://8608569869"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：音效库显示免费",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://4702564143"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：鱿鱼游戏",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://7535587224"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：武器A",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://1838666946"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：阳光彩虹小白马",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://94625860335523"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：甩葱歌",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://124971750815923"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：what can I say",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://99519218846428"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：Kinetica（恐怖）",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://1841968569"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：Frontside 360",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://16190783444"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：SCPSL-九尾狐",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://856598599"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：义勇军进行曲（国歌）",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://1845918434"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：马赛曲（法国国歌）",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://1838111377"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：baller",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://13530438299"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：英国掷弹兵进行曲",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://1840172845"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：what",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://5978550333"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：newworld",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://5410082346"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：幸福（大亨の小曲）",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://5409360995"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：国共合作，一致对外（PHONK）",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://16190782181"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：ロストアンブレラ×Funk",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://120871403922972"
+            Sound:Play()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "音乐：jumpstyle（黑客の小曲）",
+   Callback = function()
+   
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+            Sound.SoundId = "rbxassetid://1839246711"
+            Sound:Play()
+
+   end,
+})
 
 local Label = PlayerTab:CreateLabel("需高UNC注入器脚本↓")
 
@@ -12671,6 +12721,15 @@ local Button = PlayerTab:CreateButton({
    Callback = function()
    
    loadstring(game:HttpGet("https://raw.githubusercontent.com/HeadHarse/Dusty/refs/heads/main/OPAUTOSWINGV2"))()
+
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "QIWIK HUB最新自动刷债券---死铁轨",
+   Callback = function()
+   
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Qiwikox12/stubrawl/refs/heads/main/AutoFarmBonds.txt"))()
 
    end,
 })
