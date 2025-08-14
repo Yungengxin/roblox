@@ -664,11 +664,11 @@ local cssdkq = false
 local gnToggle = TabHandles.gn:Toggle({
     Title = "自动刷速度",
     Desc = "城市内使用",
-    Value = cssdkq,
-    Callback = function(state) 
+    Value = cssdkq and bxsdkq,
+    Callback = function(state,state2) 
         cssdkq = state
-        bxsdkq = state
-        if state then
+        bxsdkq = state2
+        if state and state2 then
             while cssdkq do
                 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","City")
     game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","City")
