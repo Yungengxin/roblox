@@ -810,6 +810,28 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEv
     end
 })
 
+local cskq = false
+local cs = TabHandles.gn:Toggle({
+    Title = "自动重生",
+    Desc = "可重生时将自动重生",
+    Value = cskq,
+    Callback = function(state) 
+        cskq = state
+        if state then
+            while cskq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("rebirthEvent"):FireServer("rebirthRequest")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动重生" or "已关闭自动重生",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
 local gnSlider = TabHandles.gn:Slider({
     Title = "Effect Intensity",
     Desc = "Adjust the effect strength",
