@@ -690,6 +690,7 @@ local gnToggle = TabHandles.gn:Toggle({
     game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","City")
             wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
             end
+            and
     while bxsdkq do
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Snow City")
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Snow City")
