@@ -698,7 +698,7 @@ local gnToggle = TabHandles.gn:Toggle({
     end
 })
 local bxsdkq = false
-local gnToggle = TabHandles.gn:Toggle({
+local gn2Toggle = TabHandles.gn:Toggle({
     Title = "自动刷速度",
     Desc = "白雪城市内使用",
     Value = bxsdkq,
