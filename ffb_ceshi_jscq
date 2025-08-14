@@ -660,7 +660,7 @@ local Sound = Instance.new("Sound",game:GetService("SoundService"))
     end
 })
 local cssdkq = false
-TabHandles.gn:Toggle({
+local cssd = TabHandles.gn:Toggle({
     Title = "自动刷速度",
     Desc = "城市内使用",
     Value = cssdkq,
@@ -698,7 +698,7 @@ TabHandles.gn:Toggle({
     end
 })
 local bxsdkq = false
-TabHandles.gn:Toggle({
+local bxsd = TabHandles.gn:Toggle({
     Title = "自动刷速度",
     Desc = "白雪城市内使用",
     Value = bxsdkq,
@@ -736,12 +736,78 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEv
     end
 })
 
-TabHandles.gn:Paragraph({
-    Title = "Interactive Components",
-    Desc = "Explore WindUI's powerful elements",
-    Image = "component",
-    ImageSize = 20,
-    Color = "White",
+local dysdkq = false
+local dysd = TabHandles.gn:Toggle({
+    Title = "自动刷速度",
+    Desc = "岩浆城市内使用",
+    Value = dysdkq,
+    Callback = function(state) 
+        dysdkq = state
+        if state then
+            while dysdkq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Magma City")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动刷速度" or "已关闭自动刷速度",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
+local cqsdkq = false
+local cqsd = TabHandles.gn:Toggle({
+    Title = "自动刷速度",
+    Desc = "传奇公路内使用",
+    Value = cqsdkq,
+    Callback = function(state) 
+        cqsdkq = state
+        if state then
+            while cqsdkq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Legends Highway")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动刷速度" or "已关闭自动刷速度",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
 })
 
 local gnSlider = TabHandles.gn:Slider({
