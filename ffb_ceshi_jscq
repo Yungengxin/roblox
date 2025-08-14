@@ -174,6 +174,7 @@ local TabHandles = {
     xx = Tabs.Main:Tab({ Title = "游戏信息", Icon = "layout-grid" }),
     Elements = Tabs.Main:Tab({ Title = "玩家功能", Icon = "layout-grid" }),
     gn = Tabs.gn:Tab({ Title = "游戏功能", Icon = "layout-grid" }),
+    csgn = Tabs.gn:Tab({ Title = "传送功能", Icon = "layout-grid" }),
     Appearance = Tabs.Settings:Tab({ Title = "UI外观", Icon = "brush" }),
     Config = Tabs.Utilities:Tab({ Title = "调整配置", Icon = "settings" })
 }
@@ -809,7 +810,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEv
         })
     end
 })
-
+TabHandles.gn:Divider()
 local cskq = false
 local cs = TabHandles.gn:Toggle({
     Title = "自动重生",
@@ -826,6 +827,170 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("rebir
         WindUI:Notify({
             Title = "Rb脚本中心：",
             Content = state and "已开启自动重生" or "已关闭自动重生",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+TabHandles.gn:Divider()
+local cszskq = false
+local cszs = TabHandles.gn:Toggle({
+    Title = "自动刷钻石",
+    Desc = "城市内使用",
+    Value = cszskq,
+    Callback = function(state) 
+        cszskq = state
+        if state then
+            while cszskq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","City")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动刷钻石" or "已关闭自动刷钻石",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
+local bxzskq = false
+local bxzs = TabHandles.gn:Toggle({
+    Title = "自动刷钻石",
+    Desc = "白雪城市内使用",
+    Value = bxzskq,
+    Callback = function(state) 
+        bxzskq = state
+        if state then
+            while bxzskq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Snow City")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动刷钻石" or "已关闭自动刷钻石",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
+local yjzskq = false
+local yjzs = TabHandles.gn:Toggle({
+    Title = "自动刷钻石",
+    Desc = "岩浆城市内使用",
+    Value = yjzskq,
+    Callback = function(state) 
+        yjzskq = state
+        if state then
+            while yjzskq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Magma City")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动刷钻石" or "已关闭自动刷钻石",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
+local cqzskq = false
+local cqzs = TabHandles.gn:Toggle({
+    Title = "自动刷钻石",
+    Desc = "白雪城市内使用",
+    Value = cqzskq,
+    Callback = function(state) 
+        cqzskq = state
+        if state then
+            while cqzskq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Gem","Legends Highway")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动刷钻石" or "已关闭自动刷钻石",
             Icon = state and "check" or "x",
             Duration = 2
         })
@@ -878,6 +1043,132 @@ TabHandles.gn:Colorpicker({
             Title = "Color Changed",
             Content = "New accent: "..color:ToHex(),
             Duration = 2
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至城市（出生点）",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-568.6292114257812, 3.1723721027374268, 412.86492919921875)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至神秘洞穴",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9683.048828125, 58.352359771728516, 3136.626953125)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至白雪城市",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-866.3868408203125, 3.222372055053711, 2165.70654296875)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至地狱洞穴",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11041.357421875, 58.352359771728516, 4111.8251953125)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至熔岩城市",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1616.8270263671875, 3.2723801136016846, 4330.65234375)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至水手路线",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1618.4071044921875, 8.759234428405762, 4892.44091796875)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至电光洞穴",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13107.9892578125, 58.352359771728516, 4099.099609375)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至传奇公路",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3673.601318359375, 70.75231170654297, 5588.7958984375)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
+        })
+    end
+})
+
+TabHandles.csgn:Button({
+    Title = "传送至丛林洞穴",
+    Icon = "bell",
+    Callback = function()
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15266.7880859375, 239.7072296142578, 3769.77490234375)
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = "传送成功",
+            Icon = "bell",
+            Duration = 3
         })
     end
 })
