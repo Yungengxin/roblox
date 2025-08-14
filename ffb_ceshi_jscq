@@ -659,16 +659,14 @@ local Sound = Instance.new("Sound",game:GetService("SoundService"))
         })
     end
 })
-local bxsdkq = false
 local cssdkq = false
 local gnToggle = TabHandles.gn:Toggle({
     Title = "自动刷速度",
     Desc = "城市内使用",
-    Value = cssdkq and bxsdkq,
-    Callback = function(state,state2) 
+    Value = cssdkq,
+    Callback = function(state) 
         cssdkq = state
-        bxsdkq = state2
-        if state and state2 then
+        if state then
             while cssdkq do
                 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","City")
     game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","City")
@@ -691,7 +689,7 @@ local gnToggle = TabHandles.gn:Toggle({
             wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
             end
             and
-    while bxsdkq do
+    while cssdkq do
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Snow City")
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Snow City")
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer("collectOrb","Red Orb","Snow City")
