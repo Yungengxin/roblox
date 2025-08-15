@@ -959,7 +959,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEv
 local cqzskq = false
 local cqzs = TabHandles.gn:Toggle({
     Title = "自动刷钻石",
-    Desc = "白雪城市内使用",
+    Desc = "传奇公路内使用",
     Value = cqzskq,
     Callback = function(state) 
         cqzskq = state
@@ -992,56 +992,6 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEv
             Title = "Rb脚本中心：",
             Content = state and "已开启自动刷钻石" or "已关闭自动刷钻石",
             Icon = state and "check" or "x",
-            Duration = 2
-        })
-    end
-})
-
-local gnSlider = TabHandles.gn:Slider({
-    Title = "Effect Intensity",
-    Desc = "Adjust the effect strength",
-    Value = { Min = 0, Max = 100, Default = 50 },
-    Callback = function(value)
-        print("Intensity set to:", value)
-    end
-})
-
-local gnDropdown = TabHandles.gn:Dropdown({
-    Title = "Select Mode",
-    Values = { "Standard", "Advanced", "Expert" },
-    Value = "Standard",
-    Callback = function(option)
-        WindUI:Notify({
-            Title = "Mode Changed",
-            Content = "Selected: "..option,
-            Duration = 2
-        })
-    end
-})
-
-TabHandles.gn:Divider()
-
-TabHandles.gn:Button({
-    Title = "Show Notification",
-    Icon = "bell",
-    Callback = function()
-        WindUI:Notify({
-            Title = "Hello WindUI!",
-            Content = "This is a sample notification",
-            Icon = "bell",
-            Duration = 3
-        })
-    end
-})
-
-TabHandles.gn:Colorpicker({
-    Title = "Accent Color",
-    Desc = "Change the UI accent color",
-    Default = Color3.fromHex("#6366f1"),
-    Callback = function(color)
-        WindUI:Notify({
-            Title = "Color Changed",
-            Content = "New accent: "..color:ToHex(),
             Duration = 2
         })
     end
