@@ -175,6 +175,7 @@ local TabHandles = {
     Elements = Tabs.Main:Tab({ Title = "玩家功能", Icon = "layout-grid" }),
     gn = Tabs.gn:Tab({ Title = "游戏功能", Icon = "layout-grid" }),
     csgn = Tabs.gn:Tab({ Title = "传送功能", Icon = "layout-grid" }),
+    fzgn = Tabs.gn:Tab({ Title = "辅助功能", Icon = "layout-grid" }),
     Appearance = Tabs.Settings:Tab({ Title = "UI外观", Icon = "brush" }),
     Config = Tabs.Utilities:Tab({ Title = "调整配置", Icon = "settings" })
 }
@@ -1119,6 +1120,91 @@ game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFram
             Content = "传送成功",
             Icon = "bell",
             Duration = 3
+        })
+    end
+})
+
+local zdbskq = false
+local zdbs = TabHandles.fzgn:Toggle({
+    Title = "自动比赛",
+    Desc = "当有比赛时自动参加比赛",
+    Value = zdbskq,
+    Callback = function(state) 
+        zdbskq = state
+        if state then
+            while zdbskq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("raceEvent"):FireServer("joinRace")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动比赛" or "已关闭自动比赛",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
+local zdsdkq = false
+local zdsd = TabHandles.fzgn:Toggle({
+    Title = "自动刷速度V2",
+    Desc = "可在任意地方使用（不稳定）",
+    Value = zdsdkq,
+    Callback = function(state) 
+        zdsdkq = state
+        if state then
+            while zdsdkq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("questsEvent"):FireServer("collectQuest",Instance.new("Folder", nil))
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动刷速度" or "已关闭自动刷速度",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
+local mcwkq = false
+local mcw = TabHandles.fzgn:Toggle({
+    Title = "自动买宠物",
+    Desc = "快速获得宠物，消耗钻石",
+    Value = mcwkq,
+    Callback = function(state) 
+        mcwkq = state
+        if state then
+            while mcwkq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("openCrystalRemote"):InvokeServer("openCrystal","Jungle Crystal")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动买宠物" or "已关闭自动买宠物",
+            Icon = state and "check" or "x",
+            Duration = 2
         })
     end
 })
