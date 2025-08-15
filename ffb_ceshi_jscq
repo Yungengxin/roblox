@@ -76,6 +76,8 @@ WindUI:Popup({
     }
 })
 
+repeat wait() until Confirmed
+
 local UserGui = Instance.new("ScreenGui", game.CoreGui)
 local UserLabel = Instance.new("TextLabel", UserGui)
 local UIGradient = Instance.new("UIGradient")
