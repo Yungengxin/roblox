@@ -1209,6 +1209,28 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("openC
     end
 })
 
+local mwjkq = false
+local mwj = TabHandles.fzgn:Toggle({
+    Title = "自动买尾迹",
+    Desc = "快速获得卡密，消耗钻石",
+    Value = mwjkq,
+    Callback = function(state) 
+        mwjkq = state
+        if state then
+            while mwjkq do
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("openCrystalRemote"):InvokeServer("openCrystal","Inferno Crystal")
+            wait(0.000000000000000000000000000000000000000000000000000000000000000000000000001)
+            end
+        end
+        WindUI:Notify({
+            Title = "Rb脚本中心：",
+            Content = state and "已开启自动买尾迹" or "已关闭自动买尾迹",
+            Icon = state and "check" or "x",
+            Duration = 2
+        })
+    end
+})
+
 TabHandles.Appearance:Paragraph({
     Title = "自定义界面",
     Desc = "个性化您的体验",
