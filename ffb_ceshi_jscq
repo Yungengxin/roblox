@@ -1214,7 +1214,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("openC
 local mwjkq = false
 local mwj = TabHandles.fzgn:Toggle({
     Title = "自动买尾迹",
-    Desc = "快速获得卡密，消耗钻石",
+    Desc = "快速获得尾迹，消耗钻石",
     Value = mwjkq,
     Callback = function(state) 
         mwjkq = state
