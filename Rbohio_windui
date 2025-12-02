@@ -8905,7 +8905,7 @@ User=am.User or{},
 
 Size=am.Size,
 
-MinSize=am.MinSize or Vector2.new(560,350),
+MinSize=am.MinSize or Vector2.new(180,240),
 MaxSize=am.MaxSize or Vector2.new(850,560),
 
 ToggleKey=am.ToggleKey,
